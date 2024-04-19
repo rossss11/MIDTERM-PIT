@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Panda7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
+    <style>
+        .snowflake {
+          position: absolute;
+          color: #f1dcdc;
+          animation: snowfall linear infinite;
+          z-index: 9999;
+        }
+
+
+        @keyframes snowfall {
+          0% {
+            transform: translateY(-10vh);
+          }
+          100% {
+            transform: translateY(100vh);
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <script>
+            function getRandom(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+          
+            for (let i = 0; i < 50; i++) {
+                const snowflake = document.createElement("i");
+                snowflake.classList.add("snowflake", "fas", "fa-snowflake");
+                snowflake.style.left = getRandom(0, window.innerWidth) + "px";
+                snowflake.style.animationDuration = getRandom(5, 20) + "s";
+                snowflake.style.animationDelay = getRandom(0, 10) + "s";
+                document.body.appendChild(snowflake);
+            }
+        </script>
+    </div>
+  
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="#">Auto</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Locataire</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Condo</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Habitation</a></li>
+    </ul>
+    <div class="logo-container">
+      <img src="images/logopanda.svg" alt="Logo">
+    </div>
+    <div class="links">
+      <a href="#">FR</a>
+      <span>|</span>
+      <a href="#">EN</a>
+    </div>
+  </div>
+  <a href="#" class="kapoy">
+    <div class="overlay"></div>
+    <div class="kapoy-content">
+      <b>COMPARER LES PRIX</b>
+    </div>
+  </a>
+</nav>
+
+<style>
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color:#fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px; 
+      height: 90px;
+      font-size:medium;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding:2%;
+    }
+
+    .navbar li {
+      float: left;
+      margin-right: 20px;
+    }
+    .navbar a {
+      color: #343a40;
+      text-decoration: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .navbar a:hover{
+      color: #a840d8;
+    }
+  .logo-container {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+
+  .logo-container img {
+    height: 40px;
+  }
+
+  .links {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+  }
+
+  .links a {
+    text-decoration: none;
+    color: rgb(83, 83, 83);
+    font-size: medium;
+  }
+
+  .links span {
+    margin: 0 5px;
+  }
+
+  .kapoy {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(168, 64, 216, 0.8);
+    border-radius: 5px;
+    display: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .kapoy:hover .overlay {
+    display: block;
+  }
+
+  .kapoy-content {
+    border: 1px solid #a840d8;
+    font-size: small;
+    padding: 10px;
+    width: 170px;
+    height: 45px;
+    text-align: center;
+    border-radius: 5px;
+    color: #a840d8;
+    position: relative;
+    z-index: 1;
+  }
+
+  .kapoy-content:hover b {
+    color: white;
+  }
+  .bababoo{
+      position: absolute;
+      right:10% ;
+      top: 98%;
+      color: darkgray;
+      font-size:medium;
+    }
+    .boboyog {
+    display: block;
+    border: 2px;
+    background-color: #a840d8;
+    position: absolute;
+    bottom: 30px;
+    left: 17%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 5px;
+    width: 210px;
+    height: 55px;
+    color: white;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+    .boboyog:hover {
+    background-color: #7b2983;
+    text-decoration: none;
+    color: white;
+}
+    .lefthouse{
+      width:400px ;
+      height: 430px; 
+      background-image: url(left\ house.svg);
+      position: absolute;
+      bottom: -0%; 
+      background-repeat: no-repeat;
+        }
+        .righthouse{
+      width:420px ;
+      height: 455px; 
+      background-image: url(right\ house.svg);
+      position: absolute;
+      right: 0%;
+      bottom: -4%; 
+      background-repeat: no-repeat;
+        }
+         .image{
+      width: 1340px;
+      height: 130px;
+      background-image: url(snow-floor.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+      bottom: -20%;
+         }
+        .tree{
+      width: 800px;
+      height: 250px;
+      position: absolute;
+      left:19%;
+      bottom:-0%;
+      background-size: cover;
+      background-image: url(backgroundtree.svg);
+      background-repeat: no-repeat;
+        }
+        .mother{
+            background-image: url(gh.svg);
+            width: 110px;
+            height: 110px;
+            background-repeat: no-repeat;
+            position: absolute;
+            left:53%;
+            bottom:-2%;
+            background-size: cover;
+        }
+        .man{
+            background-image: url(man.svg);
+            width: 300px;
+            height: 200px;
+            background-repeat: no-repeat;
+            position: absolute;
+            left:25%;
+            bottom:-4%;
+            background-size: cover;
+        }
+        .snowman{
+            background-image: url(snowman.svg);
+            width: 165px;
+            height: 225px;
+            background-repeat: no-repeat;
+            position: absolute;
+            left:60%;
+            bottom:-13%;
+            background-size: cover;
+        }
+        .cover{
+            background-image: url(cover.svg);
+            width: 130px;
+            height:10px;
+            background-repeat: no-repeat;
+            position: absolute;
+            left:65%;
+            bottom:3%;
+            background-size: cover;
+        }
+        .clouds{
+            background-image: url(clouds.svg);
+            width: 380px;
+            height:150px;
+            background-repeat: no-repeat;
+            position: relative;
+            background-size: cover;
+        }
+        @keyframes cloudy 
+         {
+            0%{margin-right: -1000px;}
+            100%{margin-right: -100px;}
+        }
+        .animationcloude{
+            animation: cloudy 35s linear infinite;
+            transform: scale(0.65);
+        }
+        .twox{
+            animation: cloudy 20s linear infinite;
+            transform: scale(0.25);
+        }
+
+    </style>
+</head>
+<body>
+  <div class="image"></div>
+  <div class="tree"></div>
+  <div class="lefthouse"></div>
+  <div class="righthouse"></div>
+  <div class="mother"></div>
+  <div class="man"></div>
+  <div class="snowman"></div>
+  <div class="cover"></div>
+  <br><br>
+  <br><br>
+  <br><br>
+  <div class="animationcloude">
+  <div class="clouds"></div>
+  </div>
+  <div class="twox">
+  <div class="clouds"></div>
+  </div>
+
+  <br><br>
+  <br><br> 
+
+  <style>
+    .bobo
+   {
+      font-size: 40px;
+      box-sizing: content-box;
+      height: 70px;
+      padding: 10px 10px;
+      display: flex;
+      color: rgb(88, 87, 87);
+      position: absolute;
+      top: -80%;
+      left: 0%;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .words
+   {
+      font-size: 40px;
+      height: 70px;
+      padding: 5px 10px;
+      display: flex;
+      color: rgb(88, 87, 87);
+      position: absolute;
+      top: 40%;
+      left: 17%;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .extention{
+        overflow: hidden;
+
+    }
+    .extention span{
+        display:flex;
+        height: 100%;
+        padding-left: 15px;
+        animation: spin_words 6s infinite;
+        color: #a840d8;
+
+    }
+    @keyframes spin_words {
+        10%{
+            transform: translateY(0%);
+        }
+        25%{
+            transform: translateY(-100%);
+        }
+        35%{
+            transform: translateY(-212%);
+        }
+        50%{
+            transform: translateY(-200%);
+        }
+        60%{
+            transform: translateY(-312%);
+        }
+        75%{
+            transform: translateY(-300%);
+        }
+        85%{
+            transform: translateY(-412%);
+        }
+        100%{
+            transform: translateY(-400%);
+        }
+    }
+        </style>
+<div class="words">
+    <p class="bobo"><b> Comparer votre</b></p> 
+    <b> assurance</b>
+    
+<div class="extention">
+        <span><b>Auto</b></span>
+        <span><b>Locataire</b></span>
+        <span><b>Condo</b></span>
+        <span><b>Habitation</b></span>
+    </div>
+  </div>
+<style>
+   .group {
+    position:absolute;
+    top: 33%; 
+    right: -50px; 
+    overflow: hidden;
+    height: 400px;
+  }
+
+  .textbox {
+    height: 70px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    color: #343a40;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color:white; 
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+    animation: scrollUp 10s linear infinite;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .textbox img {
+    width: 30%;
+    height: 90%;
+  }
+
+  .buy_now {
+    border: 1px solid #a840d8;
+    padding: 3px;
+    text-align: center;
+    font-size: x-small;
+    width: 65px;
+    height: 25px;
+    border-radius: 5px;
+    color: #a840d8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  @keyframes scrollUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    5%, 90% {
+      opacity: 1;
+    }
+    95% {
+      transform: translateY(calc(-100% - 20px)); 
+      opacity: 0;
+    }
+  }
+</style>
+        <div class="group">
+          <div class="textbox">
+            <img src="images/intact.png">
+            <span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $60.00/ Mensuel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+            <span class="buy_now"><b>CHOISIR</b></span>
+          </div>
+  
+          <div class="textbox">
+            <img src="images/png-transparent-economical-insurance-insurance-agent-donovan-insurance-brokers-inc-vehicle-insurance-others-blue-company-text.png">
+            <span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $62.92/ Mensuel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+            <span class="buy_now"><b>CHOISIR</b></span>
+          </div>
+  
+          <div class="textbox">
+            <img src="images/pafco-logo-1.png">
+            <span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $64.24/ Mensuel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+            <span class="buy_now"><b>CHOISIR</b></span>
+          </div>
+  
+          <div class="textbox">
+            <img src="images/wawanesa-insurance-blue-for-screen-only-1.png">
+            <span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $65.00/ Mensuel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+            <span class="buy_now"><b>CHOISIR</b></span>
+          </div>
+  
+          <div class="textbox">
+            <img src="images/unnamed (1).jpg">
+            <span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $61.44/ Mensuel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span>
+            <span class="buy_now"><b>CHOISIR</b></span>
+          </div>
+        </div>
+    <br>
+    <br>
+     <h4 class="bababoo">Ceci est à titre indicatif seulement</h4> 
+
+     <p style="font-size: 20px;" class="words">
+      <br>
+      <br>
+      <br>Laissez Panda7 magasiner gratuitement la meilleure<br> police d'assurance habitation et automobile pour <br>vous.</p>
+      <a class="boboyog" href="#">
+        COMPARER LES PRIX
+    </a>
+     <br><br>
+     <br><br>
+     <br><br>
+     <br><br>
+    <center>
+      <h1 style="font-size: 40px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: rgb(65, 64, 64);">Pourquoi les clients choisissent Panda7</h1>
+     </center>
+     <style>
+     .scrollapp {
+        overflow: hidden;
+        width: 100%;
+      }
+    
+      .testimonials {
+        display: flex;
+        animation: scrollLeft 20s linear infinite;
+      }
+    
+      .name {
+        flex: 0 0 auto;
+        margin-right: 40px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        width: 28%;
+        padding: 25px;
+        margin-top: 5%;
+        border-radius: 10px;
+        height: 220px;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+    
+      @keyframes scrollLeft {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    
+      .ngalan {
+        color:rgb(88, 30, 88);
+        margin-left: 5%;
+        position: absolute;
+        top: 25px;
+        left: calc(18% + 25px); 
+      }
+    
+      .star {
+        color: yellow;
+      }
+    
+      .comment {
+        color: rgb(141, 137, 137);
+        position: absolute;
+        bottom: 10%;
+      }
+    
+      .comment:hover {
+        color: #343a40;
+      }
+    
+      .scrollapp:hover .testimonials {
+        animation-play-state: paused;
+      }
+     </style>
+ <div class="scrollapp">
+  <div class="testimonials">
+    <div class="name">
+      <img width="18%" height="30%" src="images/solo leveling.png">
+      <p class="ngalan"><b>Alexandra Martin</b><br>
+        <span class="star">★★★★★</span></p>
+        <br>
+      <p class="comment">J’ai apprécier mon expérience avec Panda7. C’est facile d’obtenir un bon prix pour l’assurance qui nous convient le mieux. Je suis satisfaite.</p>
+    </div>
+
+    <div class="name">
+      <img width="18%" height="30%" src="images/posing goals.png">
+      <p class="ngalan"><b>Gaelle Bitton</b><br>
+        <span class="star">★★★★★</span></p>
+      <p class="comment">Super expérience et service à la clientèle très agréable !</p>
+    </div>
+
+    <div class="name">
+      <img width="18%" height="30%" src="images/sam smith.png">
+      <p class="ngalan"><b>Clément Meunier</b><br>
+        <span class="star">★★★★★</span></p>
+      <p class="comment">Je recommande ! Ils m'ont fait le prix le moins chers ! Très attentif et arrangeant.</p>
+    </div>
+
+    <div class="name">
+      <img width="18%" height="30%" src="images/couple goals.png">
+      <p class="ngalan"><b>Guillaume Dumouchel</b><br>
+        <span class="star">★★★★★</span></p>
+      <p class="comment">Agent courtois et professionnel. Soumissions rapide qui répondait à nos besoins.</p>
+    </div>
+
+    <div class="name">
+      <img width="18%" height="30%" src="images/the rock.png">
+      <p class="ngalan"><b>Sina Channel</b><br>
+        <span class="star">★★★★★</span></p>
+      <p class="comment">wow très bon service à la clientèle! Merci à Amine plus précisément, je recommande fortement!</p>
+    </div>
+
+    <div class="name">
+      <img width="18%" height="30%" src="images/beach girl.png">
+      <p class="ngalan"><b>Raphael Haddad</b><br>
+        <span class="star">★★★★★</span></p>
+      <p class="comment">Mon expérience a été exceptionnelle. De l'ouverture du sinistre à la récupération de la voiture réparée, chaque étape s'est déroulée sans problèmes.</p>
+    </div>
+  </div>
+</div>
+
+<br><br>
+<br><br>
+<br><br>
+
+
+<center>
+  <h1 style="font-size: 40px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:rgb(65, 64, 64);">Recevez plusieurs offres des assureurs et <br> choisissez celle qui vous convient</h1>
+  <p style="font-size:22px;color: rgb(83, 83, 83);">La tranquilité d'esprit sachant que vous avez exploré vos options et que vous bénéficiez du meilleur prix</p>
+  <br>
+  <br>
+  <div class="bts">
+    <div class="blackpink">
+      <img class="bibo"src="images/time.svg" alt="No internet">
+      <p class="descriptionmo"><b>Économisez du temps</b><br>Pourquoi attendre au téléphone,<br>optez pour un achat en ligne <br>instantané</p>
+    </div>
+    <div class="blackpink">
+      <img class="bibo" src="images/money.svg" alt="No internet">
+      <p class="descriptionmo"><b>Économisez de l'argent</b><br>Comparer les prix d'assurance<br>et ajustez facilement vos<br> couvertures</p>
+    </div>
+    <div class="blackpink">
+      <img class="bibo" src="images/bada.svg" alt="No internet">
+      <p class="descriptionmo"><b>Vous êtes couverts</b><br>Sélectionner l'assureur qui vous<br>convient, et acheter votre police</p>
+    </div>
+  </div>
+<style>
+ .bts {
+      text-align: center;
+    }
+    .blackpink {
+      display: inline-block;
+      margin: 20px;
+      vertical-align: top;
+    }
+    .bibo {
+      width: 60%;
+      display: block;
+      margin: 0 auto;
+    }
+    .descriptionmo{
+      color: rgb(83, 83, 83);
+      font-size:25px;
+      margin-top: 30px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+</style>
+<br><br>
+<br><br>
+<br><br>
+<center>
+  <h1 style="font-size: 40px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:rgb(65, 64, 64);">Combiner et économiser!</h1>
+  <p style="font-size:22px;color: rgb(83, 83, 83);">Économisez jusqu'à 15% en combinant plusieurs produits d'assurance Panda7</p>
+  <br>
+  <br>
+</center>
+<style>
+ .boxes {
+      color: rgb(61, 60, 60);
+      font-size: 25px;
+      height: 320px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+      border-radius: 10px;
+      width: 20%;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+      margin-right: 20px;
+      margin-bottom: 20px; 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      display: inline-block;
+      vertical-align: top; 
+      overflow: hidden; 
+      text-decoration: none;
+    }
+
+    .box-link {
+      text-decoration: none;
+    }
+
+    .small_box {
+      border: 1px solid #a840d8;
+      font-size: 13px;
+      padding: 10px;
+      width: 160px;
+      height: 40px;
+      border-radius: 5px;
+      color: #a840d8;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 30px;
+      margin-left: 40px;
+      text-decoration: none;
+    }
+
+    .small_box:hover {
+     text-decoration: none;
+      background-color: #7b2983;
+      color: white;
+   
+    }
+
+    @media screen and (max-width: 768px) {
+      .boxes {
+        width: 60%;
+        margin-right: 0; 
+        margin-bottom: 20px;
+        text-decoration: none;
+      }
+
+    }
+</style>
+<div class="boxes">
+  <img src="images/auto.png" alt="No Internet Connection">
+  <p><b>Assurance automobile</b></p>
+  <p style="font-size: 18px;">Une assurance qui va au-delà de la couverture «de base»<br></p>
+  <a href="#" class="box-link">
+    <p class="small_box">COMPARER LES PRIX</p>
+  </a>
+</div>
+
+<div class="boxes">
+  <img src="images/building.png" alt="No Internet Connection">
+  <p><b>Assurance locataire</b></p>
+  <p style="font-size: 18px;">L'assurance locataire pour vous protéger, vous et vos biens<br><br></p> 
+  <a href="#" class="box-link">
+    <p class="small_box">COMPARER LES PRIX</p>
+  </a>
+</div>
+ 
+<div class="boxes">
+  <img src="images/condo.png" alt="No Internet Connection">
+  <p><b>Assurance condo</b></p>
+  <p style="font-size: 18px;">Une assurance pour votre espace, votre contenu et votre responsabilité</p>
+  <a href="#" class="box-link">
+    <p class="small_box">COMPARER LES PRIX</p>
+  </a>
+</div>
+  
+<div class="boxes">
+  <img src="images/balay.png" alt="No Internet Connection">
+  <p><b>Assurance habitation</b></p>
+  <p style="font-size: 18px;">Protection pour votre précision maison et ce tout ce qu'elle contient</p>
+  <a href="#" class="box-link">
+    <p class="small_box">COMPARER LES PRIX</p>
+  </a>
+</div>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+<center>
+  <h1 style="font-size: 40px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:rgb(65, 64, 64);">En ligne 24/7</h1>
+  <p style="font-size:22px;color: rgb(83, 83, 83);">Les services en ligne de Panda7 sont disponibles 24 heures sur 24, 7 jours sur 7, vous pouvez obtenir un accès immédiat aux<br> meilleures soumissions parmi les principaux assureurs</p>
+  <br>
+  <br>
+  <br>
+  <style>
+    .photo-container {
+      display: inline-block;
+      text-align: center;
+      margin-right: 20px;
+    }
+  
+    .photo {
+      max-width: 200px;
+     width: 31%;
+    }
+  
+    .description {
+      margin-top: 10px;
+      font-size: 30px;
+      color: rgb(83, 83, 83);
+    }
+    .purple{
+     display: block;
+     border:2px;
+     background-color:#a840d8;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     border-radius: 5px;
+     width: 220px;
+     height: 55px;
+     color: white;
+     padding: 1%;
+     text-align: center;
+     text-decoration: none;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     transition: background-color 0.3s;
+}
+
+    .purple:hover {
+    background-color: #7b2983;
+    text-decoration: none;
+    color: #fff;
+}
+
+  </style>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="photo-container">
+    <img class="photo" src="images/arrow.svg" alt="No Internet">
+    <div class="description">
+      Achat en ligne<br>instantané
+    </div>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="photo-container">
+    <img class="photo" src="images/shield.svg" alt="No Internet">
+    <div class="description">
+      Achat<br>sécurisé
+    </div>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="photo-container">
+    <img class="photo" src="images/computer.svg" alt="No Internet">
+    <div class="description">
+      Comparer les coûts<br> et les couvertures 
+    </div>
+  </div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="photo-container">
+    <img class="photo" src="images/clock.svg" alt="No Internet">
+    <div class="description">
+      Disponible<br> 24/7
+    </div>
+  </div> 
+
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+<h1 style="font-size: 40px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color:rgb(65, 64, 64);">Prêt à économiser?</h1>
+<br>
+<br>
+<br>
+<a class="purple" href="#">
+   COMPARER LES PRIX
+</a>
+</center>
+<div class="bg_pic"></div>
+<br>
+<style>
+
+.bg_pic{
+  background-image: url(floor.svg);
+  background-repeat: no-repeat;
+  width:1245px;
+  height:290px ;
+  background-size: cover;
+ 
+}
+.background {
+      background-color: #191b1d;
+      color: white;
+      padding: 5% 10%;
+    }
+    .sectioner {
+      font-size: 1rem;
+      color: white;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin-bottom: 1rem; 
+      text-align: justify;
+    }
+    .sectioner img {
+      width: 65%; 
+      vertical-align:middle;
+      margin-right: 1rem; 
+    }
+    .fa-instagram,
+    .fa-facebook {
+      font-size: 2rem;
+      color: #a840d8;
+    }
+    .fa-instagram:hover{
+      color: rgb(241, 208, 18);
+    }
+    .fa-facebook:hover{
+      color: rgb(38, 38, 207);
+    }
+    .register {
+      color: white;
+      text-decoration: none;
+      text-align: justify;
+    }
+    .register:hover {
+      color: #a840d8;
+      text-decoration: none;
+    }
+    .linkers {
+      color: white;
+      text-decoration: none;
+    }
+    .linkers a:hover {
+      color: #7b2983;
+      text-decoration: none;
+    }
+
+    .flexible {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:space-between;
+      text-align: justify;
+    }
+    .flexer-item {
+      width: calc(28% - 3rem); 
+      margin-bottom: 2rem; 
+    }
+    @media screen and (max-width: 768px) {
+      .flexer-item {
+        width: 100%;
+      }
+    }
+    .sorry{
+        color: rgb(167, 163, 163);
+        text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="flexible">
+      <div class="sectioner flexer-item">
+        <img src="images/panda.svg" alt="Panda Logo">
+        <br>
+        <p class="sorry">Panda7 est un cabinet en assurance de dommages inscrit auprès de l'AMF Nº d'inscription 603975</p>
+        <a class="register" href="#" alt="No Connection">Registre L'Autorité des Marchés Financiers</a>
+      </div>
+      &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; 
+
+      <div class="sectioner flexer-item">
+        <a class="register" href="#" alt="Connect to Network"><p>Accueil</p></a>
+        <a class="register" href="#"  alt="Connect to network"><p>Notre philosophie</p></a>
+        <a class="register" href="#"  alt="Connect to network"><p>Soumission</p></a>
+        <a class="register" href="#"  alt="Connect to network"><p>FAQ</p></a>
+        <a class="register" href="#"  alt="Connect to network"><p>Blog</p></a>
+      </div>
+
+      <div class="sectioner flexer-item">
+        <a class="register" href="#" alt="No Connection"><p>Politique de confidentialité</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Politique traitement des plaintes</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Polices et avenants</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Conditions d’utilisations</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Partenariat LMBF</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Rejoint notre équipe</p></a>
+      </div>
+      &nbsp;  &nbsp;
+
+      <div class="sectioner flexer-item">
+        <a class="register" href="#" alt="No Connection"><h5>Contactez-nous</h5></a>
+        <a href="#" alt="No Connection"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;
+        <a href="#" alt="No Connection"><i class="fa-brands fa-facebook"></i></a>
+        <a class="register" href="#" alt="No Connection"><p><i class="fa-solid fa-phone"></i>&nbsp;1 (514) 447 7987</p></a>
+        <p>201-1955 Ch. De La Côte-de-Liesse Saint-Laurent, QC, H4N 3A8</p>
+      </div>
+    </div>
+    <br><br>
+    <br><br>
+    <div class="flexible">
+      <div class="sectioner flexer-item">
+        <a class="register" href="#" alt="No Connection"><h3>En partenariat avec</h3></a>
+        <a href="#" alt="No Connection"><img src="images/lmbf.svg" alt="LMBF Logo"></a>
+        <br><br>
+        <a href="#" alt="No Connection"><img src="images/trusted site.png" alt="Trusted Site Logo"></a>
+        <p>© 2024 Panda7</p>
+      </div>
+
+      <div class="sectioner flexer-item">
+        <h5>Comparer vos assurances</h5>
+        <a class="register" href="#" alt="No Connection"><p>Comparer soumission auto</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Comparer assurance locataire</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Comparer assurance condo</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Comparer assurance habitation</p></a>
+      </div>
+
+      <div class="sectioner flexer-item">
+        <h5>Trouver une assurance à Montréal</h5>
+        <a class="register" href="#" alt="No Connection"><p>Trouver une assurance auto à Montréal</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Trouver une assurance condo à Montréal</p></a>
+        <a class="register" href="#" alt="No Connection"><p>Trouver une assurance locataire à Montréal</p></a>
+      </div>
+    </div>
+  </div>
+  
+ 
+
+</body>
+</html>
